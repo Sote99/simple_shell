@@ -1,1 +1,1 @@
-This is a simple shell team project done by Olayinka and Kanyinsola
+Partner 1 is here (Saint) [www.github.com/Sote99]
