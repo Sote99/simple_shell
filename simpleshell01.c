@@ -37,10 +37,7 @@ wait(NULL);
 free(args[0]);
 }
 /**
- * readCommand - Read a command from the user
- *
- * This function reads a command from the user and returns it as a string.
- *
+ * readCommand - Read a command from the user and returns it as a string
  * return: A pointer to the string containing the user's command
  */
 
@@ -49,7 +46,6 @@ char *readCommand()
 char *buffer = NULL;
 size_t bufsize = 0;
 ssize_t characters;
-}
 
 printf("$ ");
 characters = getline(&buffer, &bufsize, stdin);
