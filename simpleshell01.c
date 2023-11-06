@@ -18,7 +18,7 @@ pid_t pid;
 args[0] = strdup(command);
 
 pid = fork();
-if (pid == -1) 
+if (pid == -1)
 {
 perror("fork");
 exit(EXIT_FAILURE);
@@ -38,8 +38,10 @@ free(args[0]);
 }
 /**
  * readCommand - Read a command from the user
- * Returns:
- * A dynamically allocated string containing the user's command.
+ *
+ * This function reads a command from the user and returns it as a string.
+ *
+ * return: A pointer to the string containing the user's command
  */
 
 char *readCommand()
@@ -47,6 +49,7 @@ char *readCommand()
 char *buffer = NULL;
 size_t bufsize = 0;
 ssize_t characters;
+}
 
 printf("$ ");
 characters = getline(&buffer, &bufsize, stdin);
