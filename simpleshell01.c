@@ -5,20 +5,20 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 /**
- * main - Entry point
- * executeCommand - Functions to execute command
- * readCOmmand - Function to read command
- * Return: 0
+ * executeCommand - Execute a command in a child process
+ * @command: The command to be executed
  */
-#define BUFFER_SIZE 102
-
 void executeCommand(const char *command)
+
+#define BUFFER_SIZE 1024
 {
 char *args[] = {NULL, NULL};
+pid_t pid;
+
 args[0] = strdup(command);
 
-pid_t pid = fork();
-if (pid == -1);
+pid = fork();
+if (pid == -1) 
 {
 perror("fork");
 exit(EXIT_FAILURE);
@@ -36,20 +36,26 @@ wait(NULL);
 
 free(args[0]);
 }
+/**
+ * readCommand - Read a command from the user
+ * Returns:
+ * A dynamically allocated string containing the user's command.
+ */
+
 char *readCommand()
 {
 char *buffer = NULL;
 size_t bufsize = 0;
 ssize_t characters;
 
-write("$ ");
+printf("$ ");
 characters = getline(&buffer, &bufsize, stdin);
 
-if(characters == -1)
+if (characters == -1)
 {
 if (feof(stdin))
 {
-write("\n");
+printf("\n");
 exit(EXIT_SUCCESS);
 }
 else
@@ -62,8 +68,11 @@ exit(EXIT_FAILURE);
 buffer[strcspn(buffer, "\n")] = 0;
 return (buffer);
 }
-
-int main(void) 
+/**
+ * main - Entry point
+ * Return: 0
+ */
+int main(void)
 {
 while (1)
 {
