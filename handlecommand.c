@@ -77,13 +77,6 @@ buffer[strcspn(buffer, "\n")] = 0;
 return (buffer);
 }
 
-/**
- * main - Entry point
- * Return: 0
- */
-int main(void)
-{
-while (1)
 {
 char *command = readCommand();
 executeCommand(command);
