@@ -83,7 +83,8 @@ return (buffer);
  */
 
 int main(void)
-
+{
+while (1)
 {
 char *command = readCommand();
 executeCommand(command);
