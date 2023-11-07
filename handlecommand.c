@@ -74,9 +74,13 @@ exit(EXIT_FAILURE);
 }
 
 buffer[strcspn(buffer, "\n")] = 0;
-return buffer;
+return (buffer);
 }
 
+/**
+ * main - Entry point
+ * Return: 0
+ */
 int main(void)
 {
 while (1)
@@ -86,6 +90,6 @@ executeCommand(command);
 free(command);
 }
 
-return 0;
+return (0);
 }
 
