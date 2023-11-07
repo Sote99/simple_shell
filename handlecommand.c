@@ -13,6 +13,7 @@
  */
 void executeCommand(const char *command)
 {
+pid_t pid;
 
 char *args[64];
 char *token;
@@ -27,7 +28,7 @@ i++;
 }
 args[i] = NULL;
 
-pid_t pid = fork();
+pid = fork();
 if (pid == -1)
 {
 perror("fork");
