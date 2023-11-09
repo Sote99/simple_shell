@@ -50,8 +50,8 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 			continue; /* Skip empty or whitespace-only lines */
 
 		/* check for comments, handle_comment modifies cmd */
- 		if (handle_comment(cmd) == NULL)
- 		{
+		if (handle_comment(cmd) == NULL)
+{
 			free(cmd);
 			cmd = NULL;
 			continue;
