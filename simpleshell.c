@@ -38,13 +38,13 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 
 	{
 		if (isatty(STDIN_FILENO))
-			prompt();  /* Display the shell prompt if running in an interactive terminal */
+			prompt();  /* Display the shell prompt if running */
 		characters = getline(&cmd, &bufsize, stdin);
 		if (characters == -1)
 		{
 			break; /* Exit the loop if getline encounters an error or EOF */
 		}
-		cmd[characters - 1] = '\0'; /* Remove the newline character at the end of the input */
+		cmd[characters - 1] = '\0'; /* Remove the newline character at */
 		if (_strlen(cmd) == 0 || _strspn(cmd, " \t\r\n") ==
 			(size_t)_strlen(cmd))
 			continue; /* Skip empty or whitespace-only lines */
