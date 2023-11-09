@@ -37,7 +37,7 @@ void add_to_list(Node_env **head, Node_env *new_node)
 	{
 		current = *head;
 		while (current->next != NULL)
-			 = current->next;
+		current = current->next;
 		current->next = new_node;
 	}
 	else
