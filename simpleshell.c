@@ -25,12 +25,13 @@ void prompt(void)
 
 int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 {
+	int updated = 0;
 	size_t bufsize = 0;
 	ssize_t characters;
 	char *status = NULL, *exit_str = "exit ", *status_copy, *dup;
 
 	char *cmd = NULL;
-	int updated = 0;
+
 
 	signal(SIGINT, handle_signal);
 
